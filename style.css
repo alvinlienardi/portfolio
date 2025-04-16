@@ -1,0 +1,48 @@
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.second-palette{
+    border-color: #DDA853;
+}
+
+#navbar{
+    background-color: #DDA853;
+    .dropdown-toggle{
+        background-color: #183B4E;
+    }
+}
+body{
+    background-color: #F5EEDC;
+    color: #183B4E;
+}
+
+#contact-me{
+    .nav{
+    background-color: #DDA853;
+    a{
+        color: #183B4E;
+    }
+    a:hover{
+        color: #F5EEDC;
+    }
+    }
+    p{
+        background-color: #183B4E;
+        color: #F5EEDC;
+        margin: 0;
+    }
+}
+
+#navbar{
+    .nav-link{
+        color: #183B4E;
+    }
+}
