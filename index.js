@@ -62,3 +62,15 @@ $(".navbar .dropdown-item").click(()=>{
             break;
     }
 });
+
+$("#github").click(()=>{
+    window.open("https://github.com/alvinlienardi");
+});
+
+$("#linkedin").click(()=>{
+    window.open("https://www.linkedin.com/in/alvinlienardi/");
+});
+
+$("#line").click(()=>{
+    window.open("https://line.me/ti/p/T3JIxPcP9e");
+});
