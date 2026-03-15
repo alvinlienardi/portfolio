@@ -1,0 +1,458 @@
+#root {
+  max-width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  background-color: rgb(255, 255, 255);
+}
+
+.header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== NAVBAR ===== */
+
+nav {
+  margin: 1rem 3rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #3f7ee3;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li.active a::after {
+  width: 100%;
+}
+
+nav ul li.active a {
+  text-decoration: none;
+}
+
+/* ===== LANGUAGES ===== */
+
+.languages {
+  margin: 1.5rem 2rem;
+  position: relative;
+}
+
+.custom-select {
+  background-color: #333;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  transition: border-color 0.25s;
+}
+
+.custom-select:hover {
+  border-color: #5b5b5b;
+}
+
+.custom-select .arrow {
+  font-size: 0.8em;
+}
+
+.select-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.25rem 0;
+  overflow: hidden;
+  z-index: 1001;
+  min-width: 100%;
+}
+
+.select-options li {
+  padding: 0.5em 1em;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.select-options li:hover {
+  background-color: #555;
+}
+
+.select-options li.selected {
+  background-color: #444;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 4rem); /* Account for header height */
+  width: 100%;
+  position: relative;
+}
+
+/* Fade-in for h1 */
+.hero-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 0;
+}
+
+.hero-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typewriter effect for h2 */
+.hero-subtitle {
+  display: inline-block;
+  border-right: 3px solid transparent;
+  font-weight: normal;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 80%;
+  min-height: 3em;
+  text-align: center;
+}
+
+.scroll-down-icon {
+  position: absolute;
+  bottom: 3rem;
+  width: 2em;
+  height: 2em;
+  opacity: 0;
+}
+
+.scroll-down-icon.hidden-icon {
+  opacity: 0;
+}
+
+.scroll-down-icon.blink {
+  animation: blink5 10s ease-in-out forwards;
+}
+
+@keyframes blink5 {
+  0%    { opacity: 0; }
+  10%   { opacity: 1; }
+  20%   { opacity: 0; }
+  30%   { opacity: 1; }
+  40%   { opacity: 0; }
+  50%   { opacity: 1; }
+  60%   { opacity: 0; }
+  70%   { opacity: 1; }
+  80%   { opacity: 0; }
+  90%   { opacity: 1; }
+  100%  { opacity: 0; }
+}
+
+/* ===== LETTER GLITCH FULL-WIDTH WRAPPER ===== */
+
+.letter-glitch-wrapper {
+  position: relative;
+  width: 100vw;
+  left: 49%;
+  transform: translateX(-50%);
+  min-height: calc(100vh - 4rem);
+}
+
+.letter-glitch-wrapper .Hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== PROJECTS ===== */
+
+.project-page {
+  padding-top: 4rem;
+}
+
+.project-page h1 {
+  margin-bottom: 4rem;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 3rem;
+  background-color: rgba(232, 232, 232, 0.537);
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.project > * {
+  flex: 1 1 300px;
+}
+
+.project .display-image {
+  width: 10%;
+  max-width: 12rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.project-date {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: -0.5em;
+  margin-bottom: 0;
+}
+
+.project-info h2 {
+  margin: 0.5em 0 0.25em;
+}
+.project-info button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.project-info img {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+/* ===== IMAGE OVERLAY ===== */
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.overlay-image {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  cursor: default;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contact-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.floating-label-group {
+  position: relative;
+}
+
+.floating-label-group input,
+.floating-label-group textarea {
+  width: 100%;
+  padding: 1.2em 0.75em 0.4em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.floating-label-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.floating-label-group input:focus,
+.floating-label-group textarea:focus {
+  border-color: #3f7ee3;
+}
+
+.floating-label-group label {
+  position: absolute;
+  left: 0.75em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: transparent;
+}
+
+/* For textarea, anchor label to the top area instead of vertical center */
+.floating-label-group textarea + label {
+  top: 1em;
+  transform: translateY(0);
+}
+
+/* Float the label up when input is focused or has content (non-empty placeholder trick) */
+.floating-label-group input:focus + label,
+.floating-label-group input:not(:placeholder-shown) + label,
+.floating-label-group textarea:focus + label,
+.floating-label-group textarea:not(:placeholder-shown) + label {
+  top: 0.25em;
+  transform: translateY(0);
+  font-size: 0.75em;
+  color: #3f7ee3;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+}
+
+.div-separator {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.div-separator > * {
+  flex: 1 1 450px;
+}
+
+.footer-right {
+  width: 70%;
+}
+
+.connect-with-me{
+  padding: 1rem;
+  margin: 0 4rem;
+  border-bottom: 1px solid #ccc;
+  h2{
+    margin-bottom: 0;
+  };
+  p{
+    margin-top: 0;
+  };
+}
+
+.connect-with-me ul{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.footer-right img {
+  width: 3em;
+  height: 3em;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+.copyright {
+  margin-top: 3rem;
+}
+
+/* ===== PROJECT SCROLL ANIMATION ===== */
+
+.project-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-animate.project-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
